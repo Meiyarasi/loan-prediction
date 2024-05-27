@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+
+
+    <title>Personal Loan Prediction</title>
+
+    <link rel="stylesheet" href="../static/css/Personal.css">
+
+</head>
+<body>
+    
+
+    <nav class="stroke">
+        <ul>
+          <li><a href="/">Home</a></li>
+        </ul>
+    </nav>
+    
+    <div class="row w-100">
+
+        <div class="left col-lg-4">
+            <img src="../static/pic/Personal.png" height="400" width="400">
+        </div>
+
+        <div class="right col-lg-8">
+            <div class="card p-3" style="height: 700px;">
+                
+                <h1 class="title text-center">Personal Loan Prediction</h1>
+
+                <div class="card-body w-100">
+                    <div class="row">
+
+                            <form action="/predict" method="post">
+                                <div class="d-flex flex-row justify-content-between">
+
+                                    <div style=" width: 40%;">
+
+                                    <div class="col-lg-6" style=" width: 100%;">
+
+                                        <div class="form-group">
+                                            <label for="name">Name</label><br>
+                                            <input type="text"  class="form-control" id="name" name="name" placeholder="Client's Name" required>
+                                        </div><br>
+
+                                        <div class="form-group">
+                                            <label for="lastname">Age</label><br>
+                                            <input type="text" class="form-control" id="age" name="age" placeholder="Client's Age"  required>
+                                        </div><br>
+
+                                        <div class="form-group">
+                                            <label for="lastname">Type of Employement</label><br>
+                                            <!-- <input type="text" class="form-control" id="marital_status" name="marital_status" placeholder="marital_status" required> -->
+                                            <select class="form-select form-select" id="temployment" name="temployment">
+                                                <option selected>Select your employement</option>
+                                                <option value="Bussiness People">Bussiness People</option>
+                                                <option value="Salaried">Salaried</option>
+                                                <option value="Self-Employed">Self-Employed</option>
+                                            </select>
+                                        </div><br>
+
+                                        <div class="form-group">
+                                            <label for="lastname">Work Experience</label><br>
+                                            <input type="number" class="form-control" id="experience" name="experience" placeholder="Year of experience" required>
+                                        </div><br>
+                                        
+                                    </div><br>
+                                    </div>
+
+                                    <div style=" width: 40%;">
+                                    <div class="col-lg-6" style=" width: 100%;">
+                                        <div class="form-group">
+                                            <label for="lastname">Applicant Income</label><br>
+                                            <input type="number" class="form-control" id="Income" name="Income" placeholder="Client's Income" required>
+                                        </div><br>
+                                        
+                                        <div class="form-group">
+                                            <label for="lastname">Loan Amount</label><br>
+                                            <input type="number" class="form-control" id="Loan_amount" name="Loan_amount" placeholder="Needed amount" required>
+                                        </div><br>
+                                        <div class="form-group">
+                                            <label for="Loan_amount_term">Loan Amount Term</label><br>
+                                            <!-- <input type="number" class="form-control" id="term" name="term" placeholder="term" required> -->
+                                            <select class="form-select form-select" id="Loan_amount_term" name="Loan_amount_term">
+                                                <option selected>Select months</option>
+                                                <option value="12">12</option>
+                                                <option value="24">24</option>
+                                                <option value="36">36</option>
+                                                <option value="48">48</option>
+                                                <option value="60">60</option>
+                                            </select>
+                                        </div><br>
+                                        <div class="form-group">
+                                            <label for="lastname">Credit History</label><br>
+                                            <!-- <input type="number" class="form-control" id="credit_history" name="credit_history" placeholder="credit_history" required> -->
+                                            <select class="form-select form-select" id="Credit_history" name="Credit_history">
+                                                <option selected>Select your score</option>
+                                                <option value="1">1</option>
+                                                <option value="0">0</option>
+                                            </select>
+                                        </div><br>
+                                        
+                                    </div>
+                                    </div> 
+                                </div>
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-lg btn-primary" >Predict</button>
+                                </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
